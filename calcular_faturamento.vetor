@@ -1,3 +1,25 @@
+def calcular_faturamento(vetor):
+    menor_valor = min(vetor)
+    maior_valor = max(vetor)
+    media_mensal = sum(vetor) / len(vetor)
+    dias_acima_da_media = sum(1 for valor in vetor if valor > media_mensal)
+
+    return menor_valor, maior_valor, dias_acima_da_media
+
+
+# Exemplo de vetor de faturamento diário
+faturamento_diario = [1400, 2000, 1800, 1200, 2500, 1900, 2200, 2100, 2300, 1700, 2400, 2600]
+
+# Chama a função para calcular os valores desejados
+menor, maior, dias_acima = calcular_faturamento(faturamento_diario)
+
+# Imprime os resultados
+print(f"Menor valor de faturamento diário: {menor}")
+print(f"Maior valor de faturamento diário: {maior}")
+print(f"Número de dias com faturamento acima da média: {dias_acima}")
+
+Resultado:
+
 Menor valor de faturamento diário: 1200
 Maior valor de faturamento diário: 2600
 Número de dias com faturamento acima da média: 6
